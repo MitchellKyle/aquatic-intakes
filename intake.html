@@ -22,14 +22,31 @@
 			<fieldset>
 				<div class="row">
 
-					<div class="col-md-6">
-						<label for="p_name">Patient Name:</label>
-						<input type="text" id="p_name" name="p_name">
+					<div class="col-md-4">
+						<div class="col-md-12">
+							<label for="p_name">Patient Name:</label>
+						</div>
+						<div class="col-md-12">
+							<input type="text" id="p_name" name="patient_name">
+						</div>
 					</div>
 
-					<div class="col-md-6">
-						<label for="date">Date:</label>
-						<input type="text" id="date" name="date">
+					<div class="col-md-4">
+						<div class="col-md-12">
+							<label for="mr_number">Medical Records Number:</label>
+						</div>
+						<div class="col-md-12">
+							<input type="text" id="mr_number" name="mr_number">
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="col-md-12">
+							<label for="date">Date:</label>
+						</div>
+						<div class="col-md-12">
+							<input type="text" id="date" name="date">
+						</div>
 					</div>
 
 					<div class="col-md-6">
@@ -44,8 +61,8 @@
 					<div class="col-md-6">
 						<div class="col-md-12">
 							<label>Service:</label>
-							<label for="ip">IP</label><input type="radio" id="ip" value="ip" name="ip">
-							<label for="op">OP</label><input type="radio" id="op" value="op" name="op">
+							<label for="ip">IP</label><input type="radio" id="ip" value="ip" name="service">
+							<label for="op">OP</label><input type="radio" id="op" value="op" name="service">
 						</div>
 					</div>
 
@@ -137,7 +154,7 @@
 
 					<div class="col-md-7 col-md-offset-1">
 						<label>*If yes, which one?</label>
-						<input type="text">
+						<input type="text" name="q_9_explain">
 					</div>
 
 					<div class="col-md-8">
@@ -166,7 +183,7 @@
 
 					<div class="col-md-7 col-md-offset-1">
 						<label>*If yes, where?</label>
-						<input type="text">
+						<input type="text" name="q_12_explain">
 					</div>
 
 					<div class="col-md-8">
@@ -269,7 +286,7 @@
 						<label>24. Is there anything about your health that you feel we should be aware of?</label>
 					</div>
 					<div class="col-md-12">
-						<textarea name="add_pat_info"></textarea>
+						<textarea name="additional_patient_info"></textarea>
 					</div>
 
 				</div>
@@ -284,7 +301,7 @@
 							<label>Additional comments on intake:</label>
 						</div>
 						<div class="col-md-12">
-								<textarea name="add_ther_info"></textarea>
+								<textarea name="additional_therapist_info"></textarea>
 						</div>
 					</div>
 
@@ -293,12 +310,15 @@
 							<label for="ther_name">Evaluating Therapist:</label>
 						</div>
 						<div class="col-md-12">
-							<input type="text" id="ther_name" name="ther_name">
+							<input type="text" id="ther_name" name="therapist_name">
 						</div>
 					</div>
 
 				</div>
 			</fieldset>
+			<div class="text-center">
+				<button type="submit">Submit</button>
+			</div>
 		</form>
 
 	</div>
