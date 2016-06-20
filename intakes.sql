@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS `intakes` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `intakes`;
+
+DROP TABLE IF EXISTS `Intake`;
+CREATE TABLE `Intake` (
+  `patient_name` varchar(50) NOT NULL,
+  `records_number` int(11) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `diagnosis` varchar(360) NOT NULL,
+  `service` varchar(3) NOT NULL,
+  `q_1` varchar(3) NOT NULL,
+  `q_2` varchar(3) NOT NULL,
+  `q_3` varchar(3) NOT NULL,
+  `q_4` varchar(25) NOT NULL,
+  `q_5` varchar(3) NOT NULL,
+  `q_6` varchar(3) NOT NULL,
+  `q_7` varchar(3) NOT NULL,
+  `q_8` varchar(3) NOT NULL,
+  `q_9` varchar(3) NOT NULL,
+  `q_9_more` varchar(25) NULL,
+  `q_10` varchar(3) NOT NULL,
+  `q_11` varchar(3) NOT NULL,
+  `q_12` varchar(3) NOT NULL,
+  `q_12_more` varchar(25) NULL,
+  `q_13` varchar(3) NOT NULL,
+  `q_14` varchar(3) NOT NULL,
+  `q_15` varchar(3) NOT NULL,
+  `q_16` varchar(3) NOT NULL,
+  `q_17` varchar(3) NOT NULL,
+  `q_18` varchar(3) NOT NULL,
+  `q_19` varchar(3) NOT NULL,
+  `q_20` varchar(3) NOT NULL,
+  `q_21` varchar(25) NOT NULL,
+  `q_22` varchar(3) NOT NULL,
+  `q_23` varchar(25) NOT NULL,
+  `q_24` varchar(360) NULL,
+  `therapist_comments` varchar(360) NULL,
+  `therapist_name` varchar(50) NOT NULL,
+  `date` date NOT NULL
+);
