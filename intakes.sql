@@ -3,12 +3,13 @@ USE `intakes`;
 
 DROP TABLE IF EXISTS `Intake`;
 CREATE TABLE `Intake` (
-  `patient_name` varchar(50) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
   `records_number` int(11) NOT NULL,
   `date_of_birth` date NOT NULL,
   `diagnosis` varchar(360) NOT NULL,
   `service` varchar(3) NOT NULL,
-  `q_1` varchar(3) NOT NULL,
+  `q_1` varchar(10) NOT NULL,
   `q_2` varchar(3) NOT NULL,
   `q_3` varchar(3) NOT NULL,
   `q_4` varchar(25) NOT NULL,
@@ -36,5 +37,5 @@ CREATE TABLE `Intake` (
   `q_24` varchar(360) NULL,
   `therapist_comments` varchar(360) NULL,
   `therapist_name` varchar(50) NOT NULL,
-  `date` date NOT NULL
+  `entered_date` date NOT NULL
 );

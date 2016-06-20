@@ -17,35 +17,44 @@
 			<h1>Aquatic Therapy Intake Questionnaire</h1>
 		</div>
 
-		<form action="" method="post">
+		<form action="inc/insert.php" method="post">
 
 			<fieldset>
 				<div class="row">
 
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<div class="col-md-12">
-							<label for="p_name">Patient Name:</label>
+							<label for="first_name">First Name:</label>
 						</div>
 						<div class="col-md-12">
-							<input type="text" id="p_name" name="patient_name">
+							<input type="text" id="first_name" name="first_name">
 						</div>
 					</div>
 
-					<div class="col-md-4">
+					<div class="col-md-6">
+						<div class="col-md-12">
+							<label for="last_name">Last Name:</label>
+						</div>
+						<div class="col-md-12">
+							<input type="text" id="last_name" name="last_name">
+						</div>
+					</div>
+
+					<div class="col-md-6">
 						<div class="col-md-12">
 							<label for="mr_number">Medical Records Number:</label>
 						</div>
 						<div class="col-md-12">
-							<input type="text" id="mr_number" name="mr_number">
+							<input type="text" id="mr_number" name="records_number">
 						</div>
 					</div>
 
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<div class="col-md-12">
 							<label for="dob">DOB:</label>
 						</div>
 						<div class="col-md-12">
-							<input type="text" id="dob" name="dob">
+							<input type="text" id="dob" name="date_of_birth">
 						</div>
 					</div>
 
@@ -61,8 +70,8 @@
 					<div class="col-md-6">
 						<div class="col-md-12">
 							<label>Service:</label>
-							<label for="ip">IP</label><input type="radio" id="ip" value="ip" name="service">
-							<label for="op">OP</label><input type="radio" id="op" value="op" name="service">
+							<label for="ip">IP</label><input type="radio" id="ip" value="IP" name="service">
+							<label for="op">OP</label><input type="radio" id="op" value="OP" name="service">
 						</div>
 					</div>
 
@@ -102,7 +111,7 @@
 						<label>4. How long does it take you to get dressed?</label>
 					</div>
 					<div class="col-md-4">
-						<input type="text" name="dressing_time">
+						<input type="text" name="q_4">
 					</div>
 
 					<div class="col-md-8">
@@ -254,7 +263,7 @@
 						<label>21. When was the start of your last menstrual cycle? (Please enter NA if not applicable)</label>
 					</div>
 					<div class="col-md-4">
-						<input type="text">
+						<input type="text" name="q_21">
 					</div>
 
 				</div>
@@ -276,17 +285,17 @@
 						<label>23. What will be your mode of tranportation to therapy?</label>
 					</div>
 					<div class="col-md-12 text-right">
-						<label for="self">Self Driver</label><input type="radio" id="self" value="self" name="trans">
-						<label for="friend">Friend/Relative</label><input type="radio" id="friend" value="friend" name="trans">
-						<label for="trans_service">Transportation Service</label><input type="radio" id="trans_service" value="trans_service" name="trans">
-						<label for="trans_other">Other</label><input type="radio" id="trans_other" value="trans_other" name="trans">
+						<label for="self">Self Driver</label><input type="radio" id="self" value="self driver" name="q_23">
+						<label for="friend">Friend/Relative</label><input type="radio" id="friend" value="friend/relative" name="q_23">
+						<label for="trans_service">Transportation Service</label><input type="radio" id="trans_service" value="transportation service" name="q_23">
+						<label for="trans_other">Other</label><input type="radio" id="trans_other" value="other" name="q_23">
 					</div>
 
 					<div class="col-md-8">
 						<label>24. Is there anything about your health that you feel we should be aware of?</label>
 					</div>
 					<div class="col-md-12">
-						<textarea name="additional_patient_info"></textarea>
+						<textarea name="q_24"></textarea>
 					</div>
 
 				</div>
@@ -301,7 +310,7 @@
 							<label>Additional comments on intake:</label>
 							</div>
 						<div class="col-md-12">
-								<textarea name="additional_therapist_info"></textarea>
+								<textarea name="therapist_comments"></textarea>
 						</div>
 					</div>
 
@@ -319,7 +328,7 @@
 							<label for="date">Date:</label>
 						</div>
 						<div class="col-md-12">
-							<input type="text" id="date" name="date">
+							<input type="text" id="date" name="entered_date">
 						</div>
 					</div>
 
