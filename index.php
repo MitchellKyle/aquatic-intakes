@@ -14,7 +14,7 @@ include("inc/header.php");
 		<div class="row">
 			<div class="col-sm-6">
 				<h3>Add a new intake?</h3>
-				<button><a href="intake.html">Add New</a></button>
+				<button><a href="intake.php">Add New</a></button>
 			</div>
 
 			<div class="col-sm-6">
@@ -24,11 +24,6 @@ include("inc/header.php");
 		</div>
 	</div>
 
-	<!-- jQuery Library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-		<!-- Bootstrap JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-</body>
-</html>
+<?php
+include("inc/footer.php");
+?>

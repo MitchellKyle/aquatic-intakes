@@ -29,26 +29,30 @@ include("inc/header.php");
 	if (!empty($search)) {
 	?>
 
-<div class="row">
-	<div class="col-md-3">
-		<h4>First Name:</h4>
+	<div class="row">
+		<div class="col-md-3">
+			<h4>First Name:</h4>
+		</div>
+		<div class="col-md-3">
+			<h4>Last Name:</h4>
+		</div>
+		<div class="col-md-3">
+			<h4>MR Number:</h4>
+		</div>
+		<div class="col-md-3">
+			<h4>Date Of Birth:</h4>
+		</div>
 	</div>
-	<div class="col-md-3">
-		<h4>Last Name:</h4>
+	<div class="row">
+	<?php
+			echo search_results_html($results);
+		}
+		?>
 	</div>
-	<div class="col-md-3">
-		<h4>MR Number:</h4>
-	</div>
-	<div class="col-md-3">
-		<h4>Date Of Birth:</h4>
-	</div>
-</div>
-<div class="row">
-<?php
-		echo search_results_html($results);
-	}
-	?>
-</div>
 	
 
 </div>
+
+<?php
+include("inc/footer.php");
+?>
