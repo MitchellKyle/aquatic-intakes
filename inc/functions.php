@@ -24,3 +24,16 @@ function search_intakes($search) {
     $intake = $results->fetchall();
     return $intake;
 }
+
+function search_results_html($results) {
+  $output = "";
+
+  foreach ($results as $result => $value) {
+    $output .= "<div class='col-md-3'><p>" . $value["first_name"] . "</p></div>" . 
+    "<div class='col-md-3'><p>" . $value["last_name"] . "</p></div>" .
+    "<div class='col-md-3'><p>" . $value["records_number"] . "</p></div>" . 
+    "<div class='col-md-3'><p>" . $value["date_of_birth"] . "</p></div>";
+  }
+
+  return $output;
+}
