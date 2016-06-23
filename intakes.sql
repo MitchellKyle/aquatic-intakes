@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS `Intake`;
 CREATE TABLE `Intake` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
   `records_number` int(11) NOT NULL,
   `date_of_birth` date NOT NULL,
   `diagnosis` varchar(360) NOT NULL,

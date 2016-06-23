@@ -8,8 +8,10 @@ include("connection.php");
 // Escape user inputs for security
 $first_name = filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING);
 $last_name = filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING);
+$full_name = $first_name . " " . $last_name;
 $records_number = filter_input(INPUT_POST, 'records_number', FILTER_SANITIZE_STRING);
-$date_of_birth = filter_input(INPUT_POST, 'date_of_birth', FILTER_SANITIZE_NUMBER_INT);
+$unformatted_date_of_birth = filter_input(INPUT_POST, 'date_of_birth', FILTER_SANITIZE_STRING);
+$date_of_birth = date('Y-m-d', strtotime($unformatted_date_of_birth));
 $diagnosis = filter_input(INPUT_POST, 'diagnosis', FILTER_SANITIZE_STRING);
 $service = filter_input(INPUT_POST, 'service', FILTER_SANITIZE_STRING);
 $q_1 = filter_input(INPUT_POST, 'q_1', FILTER_SANITIZE_STRING);
@@ -38,11 +40,13 @@ $q_23 = filter_input(INPUT_POST, 'q_23', FILTER_SANITIZE_STRING);
 $q_24 = filter_input(INPUT_POST, 'q_24', FILTER_SANITIZE_STRING);
 $therapist_comments = filter_input(INPUT_POST, 'therapist_comments', FILTER_SANITIZE_STRING);
 $therapist_name = filter_input(INPUT_POST, 'therapist_name', FILTER_SANITIZE_STRING);
-$entered_date = filter_input(INPUT_POST, 'entered_date', FILTER_SANITIZE_NUMBER_INT);
+$unformatted_entered_date = filter_input(INPUT_POST, 'entered_date', FILTER_SANITIZE_STRING);
+$entered_date = date('Y-m-d', strtotime($unformatted_entered_date));
+
  
 // attempt insert query execution
 try {
-	$sql = $dbh->prepare("INSERT INTO intakes.Intake (first_name, last_name, records_number, date_of_birth, diagnosis, service, q_1, q_2, q_3, q_4, q_5, q_6, q_7, q_8, q_9, q_10, q_11, q_12, q_13, q_14, q_15, q_16, q_17, q_18, q_19, q_20, q_21, q_22, q_23, q_24, therapist_comments, therapist_name, entered_date) VALUES ('$first_name', '$last_name', '$records_number', '$date_of_birth', '$diagnosis', '$service', '$q_1', '$q_2', '$q_3', '$q_4', '$q_5', '$q_6', '$q_7', '$q_8', '$q_9', '$q_10', '$q_11', '$q_12', '$q_13', '$q_14', '$q_15', '$q_16', '$q_17', '$q_18', '$q_19', '$q_20', '$q_21', '$q_22', '$q_23', '$q_24', '$therapist_comments', '$therapist_name', '$entered_date')");
+	$sql = $dbh->prepare("INSERT INTO intakes.Intake (first_name, last_name, full_name, records_number, date_of_birth, diagnosis, service, q_1, q_2, q_3, q_4, q_5, q_6, q_7, q_8, q_9, q_10, q_11, q_12, q_13, q_14, q_15, q_16, q_17, q_18, q_19, q_20, q_21, q_22, q_23, q_24, therapist_comments, therapist_name, entered_date) VALUES ('$first_name', '$last_name', '$full_name', '$records_number', '$date_of_birth', '$diagnosis', '$service', '$q_1', '$q_2', '$q_3', '$q_4', '$q_5', '$q_6', '$q_7', '$q_8', '$q_9', '$q_10', '$q_11', '$q_12', '$q_13', '$q_14', '$q_15', '$q_16', '$q_17', '$q_18', '$q_19', '$q_20', '$q_21', '$q_22', '$q_23', '$q_24', '$therapist_comments', '$therapist_name', '$entered_date')");
 	$sql->execute();
 }  catch (Exception $e) {
   echo "Failed: " . $e->getMessage();
