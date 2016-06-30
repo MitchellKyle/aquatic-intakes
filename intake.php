@@ -1,4 +1,10 @@
 <?php
+
+$success = false;
+if ($_POST['id'] != "") {
+	$success = true;
+}
+
 include("inc/header.php");
 include("inc/insert.php");
 ?>
@@ -7,6 +13,9 @@ include("inc/insert.php");
 		<div>
 			<h1>Aquatic Therapy Intake Questionnaire</h1>
 			<?php
+			if ($success) {
+				echo "Submussion successful. Thank you.";
+			}
 			if (isset($error_message)) {
 				echo "<p>" . $error_message . "</p>";
 			} else {
