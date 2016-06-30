@@ -65,7 +65,9 @@ if ($q_12 == "yes" && $q_12_more == "") {
 if (!isset($error_message)) {
 	try {
 		$sql = $dbh->prepare("INSERT INTO intakes.Intake (first_name, last_name, full_name, records_number, date_of_birth, diagnosis, service, q_1, q_2, q_3, q_4, q_5, q_6, q_7, q_8, q_9, q_9_more, q_10, q_11, q_12, q_12_more, q_13, q_14, q_15, q_16, q_17, q_18, q_19, q_20, q_21, q_22, q_23, q_24, therapist_comments, therapist_name, entered_date) VALUES ('$first_name', '$last_name', '$full_name', '$records_number', '$date_of_birth', '$diagnosis', '$service', '$q_1', '$q_2', '$q_3', '$q_4', '$q_5', '$q_6', '$q_7', '$q_8', '$q_9', '$q_9_more', '$q_10', '$q_11', '$q_12', '$q_12_more', '$q_13', '$q_14', '$q_15', '$q_16', '$q_17', '$q_18', '$q_19', '$q_20', '$q_21', '$q_22', '$q_23', '$q_24', '$therapist_comments', '$therapist_name', '$entered_date')");
-		$sql->execute();
+		if($sql->execute()) {
+			$success = "Submission Successful. Thanks you.";
+		}
 	}  catch (Exception $e) {
 	  echo "Failed: " . $e->getMessage();
 	}

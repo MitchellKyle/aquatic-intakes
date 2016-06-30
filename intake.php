@@ -1,9 +1,7 @@
 <?php
-
-$success = false;
-if ($_POST['id'] != "") {
-	$success = true;
-}
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+ini_set("html_errors", 1);
 
 include("inc/header.php");
 include("inc/insert.php");
@@ -13,18 +11,19 @@ include("inc/insert.php");
 		<div>
 			<h1>Aquatic Therapy Intake Questionnaire</h1>
 			<?php
-			if ($success) {
-				echo "Submussion successful. Thank you.";
-			}
+			if (isset($success)) {
+				echo "<div>" . $success . "</div>";
+			} else {
 			if (isset($error_message)) {
 				echo "<p>" . $error_message . "</p>";
 			} else {
 				echo "* Denotes a required field.";
 			}
+			}
 			?>
 		</div>
 
-		<form action="" method="post">
+		<form action="" method="POST">
 
 			<fieldset>
 				<div class="row">
