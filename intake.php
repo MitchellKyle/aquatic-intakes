@@ -14,11 +14,11 @@ include("inc/insert.php");
 			if (isset($success)) {
 				echo "<div>" . $success . "</div>";
 			} else {
-			if (isset($error_message)) {
-				echo "<p>" . $error_message . "</p>";
-			} else {
-				echo "* Denotes a required field.";
-			}
+				if (isset($error_message)) {
+					echo "<p>" . $error_message . "</p>";
+				} else {
+					echo "* Denotes a required field.";
+				}
 			}
 			?>
 		</div>
@@ -64,7 +64,7 @@ include("inc/insert.php");
 							<label for="dob">DOB (MM/DD/YYYY):</label>
 						</div>
 						<div class="col-md-12">
-							<input type="text" id="dob" name="date_of_birth" value="<?php if (isset($date_of_birth)) { echo $date_of_birth; } ?>">
+							<input type="text" id="dob" name="date_of_birth" value="<?php if (isset($unformatted_date_of_birth)) { echo $unformatted_date_of_birth; } ?>">
 						</div>
 					</div>
 
