@@ -1,6 +1,12 @@
 <?php
+function check_input($input) {
+  $data = filter_input(INPUT_POST, $input, FILTER_SANITIZE_STRING);
+
+  return $data;
+}
+
 function search_intakes($search) {
-  include("insert.php");
+  include("connection.php");
 
   try {
     $sql = "
@@ -40,7 +46,7 @@ function search_results_html($results) {
 }
 
 function search_details($id) {
-  include('insert.php');
+  include('connection.php');
 
   try {
     $sql = "SELECT * FROM Intake WHERE id = ?";

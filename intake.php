@@ -11,11 +11,12 @@ include("inc/insert.php");
 		<div>
 			<h1>Aquatic Therapy Intake Questionnaire</h1>
 			<?php
-			if (isset($success)) {
-				echo "<div>" . $success . "</div>";
+			if ($_POST && isset($success)) {
+				echo "<div class='success'>" . $success . "</div>";
+				exit;
 			} else {
 				if (isset($error_message)) {
-					echo "<p>" . $error_message . "</p>";
+					echo "<p class='error'>" . $error_message . "</p>";
 				} else {
 					echo "* Denotes a required field.";
 				}
@@ -367,7 +368,7 @@ include("inc/insert.php");
 							<label for="date">Date:</label>
 						</div>
 						<div class="col-md-12">
-							<input type="text" id="date" name="entered_date" value="<?php if (isset($entered_date)) { echo $entered_date; } ?>">
+							<input type="text" id="date" name="entered_date" value="<?php if (isset($unformatted_entered_date)) { echo $unformatted_entered_date; } ?>">
 						</div>
 					</div>
 
