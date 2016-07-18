@@ -11,7 +11,7 @@ CREATE TABLE `Intake` (
   `date_of_birth` date NOT NULL,
   `diagnosis` varchar(360) NOT NULL,
   `service` varchar(3) NOT NULL,
-  `q_1` varchar(10) NOT NULL,
+  `q_1` varchar(15) NOT NULL,
   `q_2` varchar(3) NOT NULL,
   `q_3` varchar(3) NOT NULL,
   `q_4` varchar(25) NOT NULL,

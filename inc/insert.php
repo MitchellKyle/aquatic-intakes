@@ -57,7 +57,7 @@ if ($_POST) {
 	if (empty($records_number)) {
 		$error_message = "Please Enter Medical Records Number.";
 	}
-	if (empty($date_of_birth)) {
+	if (empty($unformatted_date_of_birth)) {
 		$error_message = "Please Enter Date of Birth.";
 	}
 	if (empty($diagnosis)) {
@@ -135,13 +135,10 @@ if ($_POST) {
 	if (empty($q_23)) {
 		$error_message = "Please Answer Question 23.";
 	}
-	if (empty($q_24)) {
-		$error_message = "Please Answer Question 24.";
-	}
 	if (empty($therapist_name)) {
 		$error_message = "Please Enter Therapist Name.";
 	}
-	if (empty($entered_date)) {
+	if (empty($unformatted_entered_date)) {
 		$error_message = "Please Enter Today's Date.";
 	}
 

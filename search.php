@@ -16,14 +16,14 @@ include("inc/header.php");
 
 <div class="container-fluid">
 	<div>
-		<h1 class="text-center">Search For An Intake</h1>
-		<p><b>Search by name, medical records number or date of birth.</b></p>
+		<h1 class="header">Search For An Intake</h1>
+		<p class="search-directions container"><b>Search by Name, Medical Records Number or Date of Birth.</b></p>
 	</div>
-	<div class="search">
+	<div class="form-group container">
 		<form method="get" action="search.php">
 			<label for="s">Search:</label>
-			<input type="text" name="s" id="s">
-			<input type="submit" value="GO">
+			<input class="form-control" type="text" name="s" id="s">
+			<button class="submit center-block" type="submit">GO</button>
 		</form>
 	</div>
 

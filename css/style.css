@@ -1,0 +1,131 @@
+/*
+===== General Styles
+*/
+
+.container-fluid {
+	max-width: 1000px;
+}
+
+.container {
+	max-width: 600px;
+}
+
+.content {
+	padding-bottom: 3em;
+}
+
+/*
+===== Navbar Styles
+*/
+
+.navbar-default {
+	background-color: #ff6600;
+}
+
+.navbar-default .navbar-brand {
+	color: #330072;
+	font-weight: 700;
+}
+
+.navbar-default .navbar-brand:hover {
+	color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #330072;
+	font-size: 1.1em;
+	font-weight: 500;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	color: #fff;
+}
+
+/*
+===== Font Styles
+*/
+
+.header {
+	color: #330072;
+}
+
+.question {
+	margin-top: 1em;
+	font-weight: 700;
+}
+
+.search-directions {
+	font-size: 1.25em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+/*
+===== Form Styles
+*/
+
+legend {
+	display: inline-block;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	font-size: 2em;
+	color: #330072;
+	border-bottom: 2px solid #ff6600;
+}
+
+.form-control {
+  border: 1px solid #330072;
+}
+
+.form-control:focus {
+	border: 1px solid #ff6600;
+	box-shadow: inset 0 1px 1px rgba(255,102,0,.6)
+}
+
+/*
+===== Errors
+*/
+
+.error {
+	font-size: 1.25em;
+	color: red;
+}
+
+/*
+===== Success
+*/
+
+.success {
+	margin-top: 1em;
+	padding: 1em;
+	font-size: 1.25em;
+	background-color: #1bbc0c;
+	color: white;
+}
+
+/*
+===== Button Styles
+*/
+
+.submit {
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	padding: .4em .5em;
+	font-size: 1.5em;
+	background-color: #ff6600;
+	color: #fff;
+	text-shadow: -1px -1px 0 rgba(51,0,114,0.66);
+	border: 2px solid #330072;
+	border-radius: 4px;
+	box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.button {
+	background-color: #330072;
+	border: 1px solid #333œ;
+	padding: .75em 1em;
+}
+
+.button a {
+	color: #fff;
+}
