@@ -163,5 +163,33 @@ if ($_POST) {
 		}  catch (Exception $e) {
 		  echo "Failed: " . $e->getMessage();
 		}
+
+		require ('vendor/phpmailer/phpmailer/class.phpmailer.php');
+    
+    $mail = new PHPMailer;
+    
+    if (isset($success)) {
+        $email_body = "New Aquatic Intake:";
+        $email_body .= "Patient Name: " . $full_name . "\n";
+        $email_body .= "DOB: " . $unformatted_date_of_birth . "\n";
+        $email_body .= "Completed by:\n";
+        $email_body .= "Therapist: " . $therapist_name . "\n";
+        $email_body .= "On: " . $unformatted_entered_date . "\n";
+        $email_body .= "Please visit the intake site for more information.";
+        
+        $mail->setFrom($therapist_name, $unformatted_entered_date);
+        $mail->addAddress('mitchkylell@gmail.com', 'Mitch');     // Add a recipient
+        
+        $mail->isHTML(false);                       // Set email format to HTML
+        
+        $mail->Subject = 'New Aquatic Intake';
+        $mail->Body    = $email_body;
+        
+        if(!$mail->send()) {
+          $error_message = 'Message could not be sent.';
+	        $error_message .= 'Mailer Error: ' . $mail->ErrorInfo; 
+        }
+        
+    }
 	}
 }
