@@ -1,12 +1,13 @@
 
 This site is designed to be a more streamlined way of filling out and
 storing of aquatic intake questionnaire forms. The current paper method
-is outdated and has some failures to organizing and storing associated with
-it.
+is outdated and has some failures when trying to collect, organize and store
+completed intnakes.
 
 In the site you will be able to fill out the form. Once it has been
-successfully submitted, an email will be sent notifying the therapist and the
-form will be stored in a database for access at a later time.
+successfully submitted, an email will be sent notifying the aquatic team of a
+new intake added to the system. The form will be stored, and will be
+searchable allowing the team to find an intake easily when needed.
 
-When accessing a logged questionnaire, the user will be able to search using
-the client name or their id number.
+When accessing a logged questionnaire, the user will be able to search for an
+intake using the client name, date of birth or their id number.
