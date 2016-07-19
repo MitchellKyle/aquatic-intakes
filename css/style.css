@@ -20,33 +20,55 @@
 
 .navbar-default {
 	background-color: #ff6600;
-}
-
-.navbar-default .navbar-brand {
-	color: #330072;
-	font-weight: 700;
-}
-
-.navbar-default .navbar-brand:hover {
-	color: #fff;
-}
-
-.navbar-default .navbar-nav>li>a {
-	color: #330072;
-	font-size: 1.1em;
-	font-weight: 500;
-}
-
-.navbar-default .navbar-nav>li>a:hover {
-	color: #fff;
+	border-radius: 0;
 }
 
 /*
 ===== Font Styles
 */
 
+.navbar-default .navbar-brand {
+	color: #330072;
+	font-weight: 700;
+	text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff; 
+}
+
+.navbar-default .navbar-brand:hover {
+	color: #fff;
+	text-shadow:
+    -1px -1px 0 #330072,
+    1px -1px 0 #330072,
+    -1px 1px 0 #330072,
+    1px 1px 0 #330072;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #330072;
+	font-size: 1.1em;
+	font-weight: 500;
+	text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	color: #fff;
+	text-shadow:
+    -1px -1px 0 #330072,
+    1px -1px 0 #330072,
+    -1px 1px 0 #330072,
+    1px 1px 0 #330072;
+}
+
 .header {
 	color: #330072;
+	padding-bottom: 1.5em;
 }
 
 .question {
@@ -108,24 +130,48 @@ legend {
 */
 
 .submit {
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: .4em .5em;
-	font-size: 1.5em;
-	background-color: #ff6600;
-	color: #fff;
-	text-shadow: -1px -1px 0 rgba(51,0,114,0.66);
-	border: 2px solid #330072;
+	margin-top: 3em;
+	background-color: #330072;
 	border-radius: 4px;
-	box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2);
+	border: 1px solid #333;
+	font-size: 1.2em;
+	font-weight: 700;
+	color: #fff;
+	padding: 1em 2em;
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.submit:hover {
+	background-color: #f60;
 }
 
 .button {
 	background-color: #330072;
-	border: 1px solid #333œ;
-	padding: .75em 1em;
+	border-radius: 4px;
+	border: 1px solid #333;
+	padding: 1em;
 }
 
 .button a {
+	font-size: 1.1em;
+	font-weight: 700;
 	color: #fff;
+	padding: 1em 1.5em;
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.button:hover {
+	background-color: #f60;
+}
+
+.button a:hover {
+	text-decoration: none;
 }
