@@ -37,9 +37,9 @@ function search_results_html($results) {
   $output = "";
 
   foreach ($results as $result => $value) {
-    $output .= "<div class='col-md-4'><p><a href='details.php?id=" . $value["id"] . "'>" . $value["full_name"] . "</p></div>" . 
-    "<div class='col-md-4'><p>" . $value["records_number"] . "</p></div>" . 
-    "<div class='col-md-4'><p>" . $value["date_of_birth"] . "</a></p></div>";
+    $output .= "<div class='col-xs-4'><p><a href='details.php?id=" . $value["id"] . "'>" . $value["full_name"] . "</p></div>" . 
+    "<div class='col-xs-4'><p>" . $value["records_number"] . "</p></div>" . 
+    "<div class='col-xs-4'><p>" . $value["date_of_birth"] . "</a></p></div>";
   }
 
   return $output;

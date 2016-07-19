@@ -230,7 +230,7 @@ include("inc/header.php");
 						</label>
 					</div>
 
-					<div class="col-xs-7 col-xs-offset-1 form-inline">
+					<div class="col-md-7 col-md-offset-1 form-inline">
 						<label>*If yes, which?</label>
 						<input class="form-control" type="text" name="q_9_more" value="<?php if (isset($q_9_more)) { echo $q_9_more; } ?>">
 					</div>
