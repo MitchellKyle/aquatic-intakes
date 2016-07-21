@@ -1,6 +1,8 @@
 <?php
 include('inc/functions.php');
 
+// Gets the id of the intake from the database and filters
+// the input
 if (isset($_GET["id"])) {
 	$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 	$person = search_details($id);

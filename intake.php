@@ -7,10 +7,13 @@ include("inc/header.php");
 		<div>
 			<h1 class="header">Aquatic Therapy Intake Questionnaire</h1>
 			<?php
+			// If the intake was added to the database, display
+			// success. Exit.
 			if ($_POST && isset($success)) {
 				echo "<div class='success text-center'>" . $success . "</div>";
 				exit;
 			} else {
+				// Checks if there was in error during submission
 				if (isset($error_message)) {
 					echo "<p class='error'>" . $error_message . "</p>";
 				}

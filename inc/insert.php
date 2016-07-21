@@ -2,8 +2,9 @@
 include("connection.php");
 include('functions.php');
 
+// Checks to see if there has been a post request made
 if ($_POST) {
-	// Escape user inputs for security
+	// Filters user input through the check_input()
 	$first_name = check_input('first_name');
 	$last_name = check_input('last_name');
 	$full_name = $first_name . " " . $last_name;
@@ -139,7 +140,6 @@ if ($_POST) {
 	}
 
 	// Checks to see if Questions 9 and 12 were answered yes, if so additional information is required
-
 	if ($q_9 == "yes" && $q_9_more == "") {
 		$error_message = "Please specify diagnosed antibiotic resistant organism. (Question 9)";
 	}
@@ -149,7 +149,8 @@ if ($_POST) {
 	}
 
 	 
-	// attempt insert query execution
+	// Checks for no errors and attempts to add the data to the
+	// database, shows error message and fails if not successful
 	if (!isset($error_message)) {
 		try {
 			$sql = $dbh->prepare("INSERT INTO intakes.Intake (first_name, last_name, full_name, records_number, date_of_birth, diagnosis, service, q_1, q_2, q_3, q_4, q_5, q_6, q_7, q_8, q_9, q_9_more, q_10, q_11, q_12, q_12_more, q_13, q_14, q_15, q_16, q_17, q_18, q_19, q_20, q_21, q_22, q_23, q_24, therapist_comments, therapist_name, entered_date) VALUES ('$first_name', '$last_name', '$full_name', '$records_number', '$date_of_birth', '$diagnosis', '$service', '$q_1', '$q_2', '$q_3', '$q_4', '$q_5', '$q_6', '$q_7', '$q_8', '$q_9', '$q_9_more', '$q_10', '$q_11', '$q_12', '$q_12_more', '$q_13', '$q_14', '$q_15', '$q_16', '$q_17', '$q_18', '$q_19', '$q_20', '$q_21', '$q_22', '$q_23', '$q_24', '$therapist_comments', '$therapist_name', '$entered_date')");
@@ -158,34 +159,38 @@ if ($_POST) {
 			}
 		}  catch (Exception $e) {
 		  echo "Failed: " . $e->getMessage();
+		  exit;
 		}
 
+		// Setting up PHPMailer to send email on successful submission
 		require ('vendor/phpmailer/phpmailer/class.phpmailer.php');
     
+    // Initializes mailer class
     $mail = new PHPMailer;
     
+    // Checks for a successful intake entry
     if (isset($success)) {
-        $email_body = "New Aquatic Intake:";
-        $email_body .= "Patient Name: " . $full_name . "\n";
-        $email_body .= "DOB: " . $unformatted_date_of_birth . "\n";
-        $email_body .= "Completed by:\n";
-        $email_body .= "Therapist: " . $therapist_name . "\n";
-        $email_body .= "On: " . $unformatted_entered_date . "\n";
-        $email_body .= "Please visit the intake site for more information.";
-        
-        $mail->setFrom($therapist_name, $unformatted_entered_date);
-        $mail->addAddress('mitchkylell@gmail.com', 'Mitch');     // Add a recipient
-        
-        $mail->isHTML(false);                       // Set email format to HTML
-        
-        $mail->Subject = 'New Aquatic Intake';
-        $mail->Body    = $email_body;
-        
-        if(!$mail->send()) {
-          $error_message = 'Message could not be sent.';
-	        $error_message .= 'Mailer Error: ' . $mail->ErrorInfo; 
-        }
-        
+    	// Builds the body of the email to be sent
+      $email_body = "New Aquatic Intake:";
+      $email_body .= "Patient Name: " . $full_name . "\n";
+      $email_body .= "DOB: " . $unformatted_date_of_birth . "\n";
+      $email_body .= "Completed by:\n";
+      $email_body .= "Therapist: " . $therapist_name . "\n";
+      $email_body .= "On: " . $unformatted_entered_date . "\n";
+      $email_body .= "Please visit the intake site for more information.";
+      
+      $mail->setFrom($therapist_name, $unformatted_entered_date);
+      $mail->addAddress('mitchkylell@gmail.com', 'Mitch');
+      $mail->isHTML(false);
+      
+      $mail->Subject = 'New Aquatic Intake';
+      $mail->Body    = $email_body;
+      
+      // Checks if there was a failure sending the email
+      if(!$mail->send()) {
+        $error_message = 'Message could not be sent.';
+        $error_message .= 'Mailer Error: ' . $mail->ErrorInfo; 
+      } 
     }
 	}
 }

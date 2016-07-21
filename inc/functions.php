@@ -1,10 +1,12 @@
 <?php
+// Filters all input
 function check_input($input) {
   $data = filter_input(INPUT_POST, $input, FILTER_SANITIZE_STRING);
 
   return $data;
 }
 
+// Searches a query against the database
 function search_intakes($search) {
   include("connection.php");
 
@@ -33,6 +35,7 @@ function search_intakes($search) {
     return $intake;
 }
 
+// Returns the list of search results in html
 function search_results_html($results) {
   $output = "";
 
@@ -45,6 +48,8 @@ function search_results_html($results) {
   return $output;
 }
 
+// Recieves the search result, queries the database
+// for all information matching the id
 function search_details($id) {
   include('connection.php');
 
