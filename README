@@ -13,3 +13,6 @@ When accessing a logged questionnaire, the user will be able to search for an
 intake using the client name, date of birth or their id number.
 
 File intakes.sql is included to initialize the database.
+
+The default connection to the database is made using mysql. inc/connection.php
+contains the default settings to connect to the database.
