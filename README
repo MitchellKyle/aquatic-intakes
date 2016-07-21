@@ -2,7 +2,7 @@
 This site is designed to be a more streamlined way of filling out and
 storing of aquatic intake questionnaire forms. The current paper method
 is outdated and has some failures when trying to collect, organize and store
-completed intnakes.
+completed intakes.
 
 In the site you will be able to fill out the form. Once it has been
 successfully submitted, an email will be sent notifying the aquatic team of a
@@ -11,3 +11,5 @@ searchable allowing the team to find an intake easily when needed.
 
 When accessing a logged questionnaire, the user will be able to search for an
 intake using the client name, date of birth or their id number.
+
+File intakes.sql is included to initialize the database.
