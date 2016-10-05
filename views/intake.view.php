@@ -1,6 +1,6 @@
 <?php
 include("inc/insert.php");
-include("inc/header.php");
+require 'partials/header.php';
 ?>
 
 	<div class="container-fluid content">
@@ -501,5 +501,5 @@ include("inc/header.php");
 	</div>
 	
 <?php
-include("inc/footer.php");
+require 'partials/footer.php';
 ?>

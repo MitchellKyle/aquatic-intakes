@@ -9,7 +9,7 @@ if (isset($_GET["s"])) {
 	$search = filter_input(INPUT_GET, "s", FILTER_SANITIZE_STRING);
 }
 
-include("inc/header.php");
+require 'partials/header.php';
 ?>
 
 <div class="container-fluid">
@@ -61,5 +61,5 @@ include("inc/header.php");
 </div>
 
 <?php
-include("inc/footer.php");
+require 'partials/footer.php';
 ?>

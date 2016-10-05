@@ -8,7 +8,7 @@ if (isset($_GET["id"])) {
 	$person = search_details($id);
 }
 
-include('inc/header.php');
+require 'partials/header.php';
 
 ?>
 
