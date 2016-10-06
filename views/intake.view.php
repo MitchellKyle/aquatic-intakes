@@ -1,5 +1,5 @@
 <?php
-include("inc/insert.php");
+
 require 'partials/header.php';
 ?>
 
@@ -21,7 +21,7 @@ require 'partials/header.php';
 			?>
 		</div>
 
-		<form action="" method="POST">
+		<form action="add-intake" method="POST">
 
 			<fieldset>
 				<div class="row" class="form-group">

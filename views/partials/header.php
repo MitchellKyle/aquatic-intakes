@@ -28,7 +28,7 @@
 	    </div>
 	    <div class="collapse navbar-collapse" id="navbar-collapse">
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="add-intake">Add New</a></li>
+	        <li><a href="intake">Add New</a></li>
 	        <li><a href="search">Search</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->

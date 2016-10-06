@@ -14,7 +14,7 @@ require 'partials/header.php';
 		<div class="row">
 			<div class="col-sm-6">
 				<h3 class="header">Add a new intake?</h3>
-				<button class="button"><a href="add-intake">Add New</a></button>
+				<button class="button"><a href="intake">Add New</a></button>
 			</div>
 
 			<div class="col-sm-6">

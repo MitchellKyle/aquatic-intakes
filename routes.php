@@ -1,8 +1,7 @@
 <?php
 
-$router->define([
-	'' => 'controllers/index.php',
-	'search' => 'controllers/search.php',
-	'add-intake' => 'controllers/intake.php',
-	'intake-details' => 'controllers/details.php'
-]);
+$router->get('', 'controllers/index.php');
+$router->get('search', 'controllers/search.php');
+$router->get('intake', 'controllers/intake.php');
+$router->get('intake-details', 'controllers/details.php');
+$router->post('add-intake', 'controller/add-intake.php');
