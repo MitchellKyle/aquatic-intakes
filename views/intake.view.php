@@ -21,7 +21,7 @@ require 'partials/header.php';
 			?>
 		</div>
 
-		<form action="add-intake" method="POST">
+		<form action="/add-intake" method="POST">
 
 			<fieldset>
 				<div class="row" class="form-group">
