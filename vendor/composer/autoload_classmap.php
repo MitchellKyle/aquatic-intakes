@@ -6,11 +6,21 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ComposerAutoloaderInit89c965b5a2ec41eb0a16fec2311a8900' => $vendorDir . '/composer/autoload_real.php',
+    'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
+    'Composer\\Autoload\\ComposerStaticInit89c965b5a2ec41eb0a16fec2311a8900' => $vendorDir . '/composer/autoload_static.php',
+    'Connection' => $baseDir . '/core/database/Connection.php',
     'EasyPeasyICS' => $vendorDir . '/phpmailer/phpmailer/extras/EasyPeasyICS.php',
+    'League\\OAuth2\\Client\\Provider\\Google' => $vendorDir . '/phpmailer/phpmailer/get_oauth_token.php',
     'PHPMailer' => $vendorDir . '/phpmailer/phpmailer/class.phpmailer.php',
+    'PHPMailerLangTest' => $vendorDir . '/phpmailer/phpmailer/test/phpmailerLangTest.php',
     'PHPMailerOAuth' => $vendorDir . '/phpmailer/phpmailer/class.phpmaileroauth.php',
     'PHPMailerOAuthGoogle' => $vendorDir . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
+    'PHPMailerTest' => $vendorDir . '/phpmailer/phpmailer/test/phpmailerTest.php',
     'POP3' => $vendorDir . '/phpmailer/phpmailer/class.pop3.php',
+    'QueryBuilder' => $baseDir . '/core/database/QueryBuilder.php',
+    'Request' => $baseDir . '/core/Request.php',
+    'Router' => $baseDir . '/core/Router.php',
     'SMTP' => $vendorDir . '/phpmailer/phpmailer/class.smtp.php',
     'ntlm_sasl_client_class' => $vendorDir . '/phpmailer/phpmailer/extras/ntlm_sasl_client.php',
     'phpmailerException' => $vendorDir . '/phpmailer/phpmailer/class.phpmailer.php',
