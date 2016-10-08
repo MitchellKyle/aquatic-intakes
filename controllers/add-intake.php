@@ -1,6 +1,6 @@
 <?php
 
-$query->insert('intakes', [
+App::get('database')->insert('intakes', [
 	'first_name' => $_POST['first_name'],
 	'last_name' => $_POST['last_name'],
 	'date_of_birth' => $_POST['date_of_birth'],
