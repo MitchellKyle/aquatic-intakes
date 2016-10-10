@@ -7,11 +7,22 @@ namespace Composer\Autoload;
 class ComposerStaticInit89c965b5a2ec41eb0a16fec2311a8900
 {
     public static $classMap = array (
+        'App' => __DIR__ . '/../..' . '/core/App.php',
+        'ComposerAutoloaderInit89c965b5a2ec41eb0a16fec2311a8900' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
+        'Composer\\Autoload\\ComposerStaticInit89c965b5a2ec41eb0a16fec2311a8900' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
         'EasyPeasyICS' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/EasyPeasyICS.php',
+        'League\\OAuth2\\Client\\Provider\\Google' => __DIR__ . '/..' . '/phpmailer/phpmailer/get_oauth_token.php',
         'PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
+        'PHPMailerLangTest' => __DIR__ . '/..' . '/phpmailer/phpmailer/test/phpmailerLangTest.php',
         'PHPMailerOAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauth.php',
         'PHPMailerOAuthGoogle' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
+        'PHPMailerTest' => __DIR__ . '/..' . '/phpmailer/phpmailer/test/phpmailerTest.php',
         'POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.pop3.php',
+        'QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
+        'Request' => __DIR__ . '/../..' . '/core/Request.php',
+        'Router' => __DIR__ . '/../..' . '/core/Router.php',
         'SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.smtp.php',
         'ntlm_sasl_client_class' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/ntlm_sasl_client.php',
         'phpmailerException' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
