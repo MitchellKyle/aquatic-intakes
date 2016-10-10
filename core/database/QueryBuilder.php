@@ -32,10 +32,16 @@ class  QueryBuilder
 		$sql = "
       SELECT first_name, last_name, records_number, date_of_birth
       FROM {$table}
-      WHERE first_name LIKE :search";
+      WHERE first_name LIKE :firstName
+      OR last_name LIKE :lastName
+      OR records_number LIKE :num
+      OR date_of_birth LIKE :dob";
     try {
       $statement = $this->pdo->prepare($sql);
-      $statement->bindValue(':search', '%'.$search.'%', PDO::PARAM_STR);
+      $statement->bindValue(':firstName', '%'.$search.'%', PDO::PARAM_STR);
+      $statement->bindValue(':lastName', '%'.$search.'%', PDO::PARAM_STR);
+      $statement->bindValue(':num', '%'.$search.'%', PDO::PARAM_STR);
+      $statement->bindValue(':dob', '%'.$search.'%', PDO::PARAM_STR);
       $statement->execute();
 
       return $statement->fetchAll(PDO::FETCH_CLASS);
