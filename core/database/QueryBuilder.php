@@ -26,4 +26,21 @@ class  QueryBuilder
 			die('Woops, something went wrong.');
 		}
 	}
+
+	public function search($table, $search)
+	{
+		$sql = "
+      SELECT first_name, last_name, records_number, date_of_birth
+      FROM {$table}
+      WHERE first_name LIKE :search";
+    try {
+      $statement = $this->pdo->prepare($sql);
+      $statement->bindValue(':search', '%'.$search.'%', PDO::PARAM_STR);
+      $statement->execute();
+
+      return $statement->fetchAll(PDO::FETCH_CLASS);
+    } catch (Exception $e) {
+			die('Whoops, something went wrong.');
+		}
+	}
 }

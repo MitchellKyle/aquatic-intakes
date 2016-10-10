@@ -1,12 +1,15 @@
 <?php
 include_once("inc/functions.php");
 
-$search = null;
-$results = array();
+// $search = null;
+// $results = array();
 
 // Checks if there is a search query and filters the input
-if (isset($_GET["s"])) {
-	$search = filter_input(INPUT_GET, "s", FILTER_SANITIZE_STRING);
+// if (isset($_GET["q"])) {
+// 	$search = filter_input(INPUT_GET, "q", FILTER_SANITIZE_STRING);
+// }
+if (empty($_GET['q'])) {
+	$_GET['q'] = '';
 }
 
 require 'partials/header.php';
@@ -19,25 +22,29 @@ require 'partials/header.php';
 	</div>
 	<!-- Search Form -->
 	<div class="form-group container">
-		<form method="get" action="search.php">
+		<form method="GET" action="search-query">
 			<label for="s">Search:</label>
-			<input class="form-control" type="text" name="s" id="s">
+			<input class="form-control" type="text" name="q" id="s">
 			<button class="submit center-block" type="submit">GO</button>
 		</form>
 	</div>
 
 <?php
+	if ($_GET['q'] === '') {
+		echo "Please enter something to search.";
+	}
 
 	// If search is not empty, run search_intakes() which
 	// queries the database and returns an array of $results
-	if (!empty($search)) {
-		$results = search_intakes($search);
+	
+		
 
 		// Checks for results from the query
-		if (empty($results)) {
-			echo "<p>No intakes were found matching <b>" . $search . "</b>.</p>";
+		else if (empty($results)) {
+			echo "<p>No intakes were found matching your search.</p>";
 			echo "<p>Please check for typing errors or search for another intake.</p>";
-		}  else {
+		}
+	else {
 	?>
 
 	<div class="row">
@@ -52,10 +59,17 @@ require 'partials/header.php';
 		</div>
 	</div>
 	<div class="row">
+			<?php foreach ($results as $result) : ?>
+				<li style="list-style: none;">
+				<?= $result->first_name; ?>
+				<?= $result->last_name; ?>
+				<?= $result->records_number; ?>
+				<?= $result->date_of_birth; ?>
+				</li>
+			<?php endforeach; ?>
 			<?php
-					echo search_results_html($results);
 				}
-			}
+			
 				?>
 	</div>
 </div>
